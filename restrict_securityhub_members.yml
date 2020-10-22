@@ -1,0 +1,24 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Condition": {
+                "ArnNotLike": {
+                    "aws:PrincipalARN": "arn:aws:iam::*:role/AWSControlTowerExecution"
+          }
+        },
+            "Action": [
+                "securityhub:DeleteInvitations",
+                "securityhub:DisableSecurityHub",
+                "securityhub:DisassociateFromMasterAccount",
+                "securityhub:DeleteMembers",
+                "securityhub:DisassociateMembers",
+                "securityhub:BatchUpdateFindings",
+                "securityhub:BatchDisableStandards",
+                "securityhub:UpdateStandardsControl"
+            ],
+            "Resource": "*",
+            "Effect": "Deny"
+        }
+    ]
+}
